@@ -36,7 +36,7 @@ jobs:
       - run: .venv/bin/python -m pytest --junitxml=reports/junit-framework.xml
       - uses: actions/upload-artifact@v7
         if: always()
-        with: {name: framework-reports-py${{ matrix.python }}, path: reports/}
+        with: {name: "framework-reports-py${{ matrix.python }}", path: reports/}
 
   example-suite:
     name: example GPU suite (fake 8x H100, 4 workers)
